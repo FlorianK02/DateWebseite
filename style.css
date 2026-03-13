@@ -1,58 +1,156 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Baloo 2', sans-serif;
-    background: url("images/HazbinHotelWall.jpg") center center / cover no-repeat;
-    color: #fff;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #001f3f; /* Fallback color if image fails */
-  }
-  
-  .container {
-    background-color: rgba(0, 0, 80, 0.6); /* etwas heller/blauer */
-    padding: 40px;
-    border-radius: 25px;
-    width: 90%;
-    max-width: 900px; /* mehr Platz für Bilder & Text */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  }
-  
-  #story-image {
-    width: 80%; /* Erhöhe die Breite auf 80% des Containers */
-    max-width: 600px; /* Erhöhe die maximale Breite auf 600px */
-    height: auto;
-    margin-bottom: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  padding: 0;
+  font-family: 'Baloo 2', sans-serif;
+
+  background: url("images/HazbinHotelWall.jpg") center center / cover no-repeat;
+  background-color: #001f3f;
+
+  color: #fff;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Eleganter Container */
+.container {
+  background: rgba(15, 15, 40, 0.85);
+  backdrop-filter: blur(6px);
+
+  padding: 50px;
+  border-radius: 25px;
+
+  width: 90%;
+  max-width: 900px;
+
+  border: 2px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.6),
+    inset 0 0 20px rgba(255,255,255,0.05);
+}
+
+/* Bild Animation */
+#story-image {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+
+  margin-bottom: 30px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+
+  transition: transform 0.4s ease;
+}
+
+#story-image:hover {
+  transform: scale(1.03);
+}
+
+/* Story Text */
+p#story-text {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  min-height: 60px;
+}
+
+/* Buttons allgemein */
+button {
+  border: none;
+  padding: 12px 26px;
+  margin: 10px;
+
+  font-size: 1.3rem;
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Weiter Button */
+#next-btn {
+  background-color: #00bfff;
+  color: white;
+}
+
+#next-btn:hover {
+  background-color: #009acd;
+}
+
+/* Emotionale Buttons */
+
+#yes-btn {
+  background: #ff4fa3;
+  color: white;
+  font-weight: bold;
+}
+
+#yes-btn:hover {
+  background: #ff2f90;
+}
+
+#no-btn {
+  background: #444;
+  color: white;
+}
+
+#no-btn:hover {
+  background: #666;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Celebration Effekt */
+
+.celebrate {
+  animation: glow 1.2s ease;
+}
+
+@keyframes glow {
+  0% { background-color: #001f3f; }
+  40% { background-color: #ff4fa3; }
+  100% { background-color: #001f3f; }
+}
+
+.heart {
+  position: fixed;
+  top: -20px;
+  font-size: 24px;
+  animation: fall 3s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 1;
   }
 
-  
-  p#story-text {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
   }
-  
-  button {
-    background-color: #00bfff;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    margin: 10px;
-    font-size: 1.3rem;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  button:hover {
-    background-color: #009acd;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
+}
+
+#date-choices button {
+  background: #ffb84f;
+  color: white;
+  font-weight: bold;
+}
+
+#date-choices button:hover {
+  background: #ffa500;
+}

@@ -24,7 +24,7 @@ const scenes = [
     image: "images/HuskDrink.jpg"
   },
   {
-    text: "",
+    text: " ",
     image: "images/HuskDrinkFinger.jpg"
   },
   {
@@ -40,14 +40,13 @@ const scenes = [
     image: "images/HuskScared.jpg"
   },
   {
-    text: "Hier gibt es wirklich nie Ruhe…",
+    text: "Ich hab hier wirklich nie meine Ruhe…",
     image: "images/HuskDrink.jpg"
   },
   {
     text: "Oh, pass auf. Hier kommen sie schon",
     image: "images/HuskPlanning.jpg"
   },
-
   {
     text: "Hey Lulu, da bist du ja!",
     image: "images/HeyLulu.jpg"
@@ -136,7 +135,6 @@ const scenes = [
     text: "Ich bin mir sicher, dass Flori das lieben würde. Der steht wirklich sehr auf Jessy xD",
     image: "images/DenktOft.jpg"
   },
-
   {
     text: "Uh, hast du das gehört?",
     image: "images/HuskSmirk.jpg"
@@ -159,36 +157,104 @@ const imageElement = document.getElementById("story-image");
 const nextButton = document.getElementById("next-btn");
 const choiceButtons = document.getElementById("choice-buttons");
 
+function typeText(text) {
+
+  let i = 0;
+  textElement.textContent = "";
+
+  const interval = setInterval(() => {
+
+    textElement.textContent += text[i];
+    i++;
+
+    if (i >= text.length) {
+      clearInterval(interval);
+    }
+
+  }, 25);
+}
+
+function launchHearts() {
+
+  for (let i = 0; i < 25; i++) {
+
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+
+    heart.innerHTML = "💖";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random() * 30) + "px";
+    heart.style.animationDuration = (2 + Math.random() * 2) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 4000);
+  }
+
+}
+
 nextButton.addEventListener("click", () => {
+
   currentScene++;
 
   if (currentScene < scenes.length) {
+
     const scene = scenes[currentScene];
 
-    textElement.textContent = scene.text;
+    typeText(scene.text);
     imageElement.src = scene.image;
 
     if (scene.showChoices) {
+
       nextButton.classList.add("hidden");
       choiceButtons.classList.remove("hidden");
+
     }
+
   }
+
 });
 
 let noClickCount = 0;
 
 // YES BUTTON
 document.getElementById("yes-btn").addEventListener("click", () => {
+  textElement.textContent = "YAYYYY x3 Hab dich lieb <3";
+  imageElement.src = "images/Cute Raccoon.jpg";
 
-  textElement.textContent = "YAYYY x3";
-  imageElement.src = "images/cute-heart-emoji-1.jpg";
+  document.body.classList.add("celebrate");
+  launchHearts();
 
   choiceButtons.classList.add("hidden");
 
+  // Kleiner Delay bevor die Date-Vorschläge erscheinen
+  setTimeout(() => {
+    const dateChoices = document.getElementById("date-choices");
+    dateChoices.classList.remove("hidden");
+
+    typeText("Was sollen wir zum Date machen?");
+  }, 1200);
 });
 
+// --- HIER kommen die Eventlistener für die Date-Vorschläge ---
+document.getElementById("cafe-btn").addEventListener("click", () => {
+  typeText("Supi! Dann gehen wir ins Katzen Café hehe x3 🐱☕");
+  document.getElementById("date-choices").classList.add("hidden");
+});
 
-// NO BUTTON
+document.getElementById("bastel-btn").addEventListener("click", () => {
+  typeText("Yayyy! Dann machen wir ein Bastel Date ✂️🎨 Wir könnten die Staffelei bemalen oder wieder nach Perlen suchen :>");
+  document.getElementById("date-choices").classList.add("hidden");
+});
+
+document.getElementById("museum-btn").addEventListener("click", () => {
+  typeText("Yippieee! Dann besuchen wir das Aquarium oder Naturkundemuseum 🐠🦖");
+  document.getElementById("date-choices").classList.add("hidden");
+});
+
 document.getElementById("no-btn").addEventListener("click", () => {
 
   noClickCount++;
@@ -199,4 +265,5 @@ document.getElementById("no-btn").addEventListener("click", () => {
     imageElement.src = "images/sure.jpg";
 
   }
+
 });
