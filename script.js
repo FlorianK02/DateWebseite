@@ -246,12 +246,12 @@ document.getElementById("cafe-btn").addEventListener("click", () => {
 });
 
 document.getElementById("bastel-btn").addEventListener("click", () => {
-  typeText("Yayyy! Dann machen wir ein Bastel Date ✂️🎨 Wir könnten die Staffelei bemalen oder wieder nach Perlen suchen :>");
+  typeText("Yayyy Bastel Date ✂️🎨 Wir könnten die Staffelei bemalen oder wieder nach Perlen suchen gehen :>");
   document.getElementById("date-choices").classList.add("hidden");
 });
 
 document.getElementById("museum-btn").addEventListener("click", () => {
-  typeText("Yippieee! Dann besuchen wir das Aquarium oder Naturkundemuseum 🐠🦖");
+  typeText("Yippieee! Aquarium oder Naturkundemuseum würde ich toll finden 🦖 Vielleicht können wir auch nen kleinen J mitnehmen hihi x3");
   document.getElementById("date-choices").classList.add("hidden");
 });
 
