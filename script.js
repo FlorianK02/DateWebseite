@@ -28,7 +28,7 @@ const scenes = [
     image: "images/HuskDrinkFinger.jpg"
   },
   {
-    text: "Jeden Abend sitzt sie an meiner Bar und hecken neue Verbrechen aus",
+    text: "Jeden Abend sitzen sie an meiner Bar und hecken neue Verbrechen aus",
     image: "images/HuskPlanning.jpg"
   },
   {
@@ -69,7 +69,7 @@ const scenes = [
     image: "images/Neuigkeiten.jpg"
   },
   {
-    text: "Ich glaube, er hat Jessy echt gern",
+    text: "Ich glaube er hat Jessy echt gern",
     image: "images/lieb.jpg"
   },
   {
@@ -89,7 +89,7 @@ const scenes = [
     image: "images/Plaene.jpg"
   },
   {
-    text: "Wie läuft deine Mission, mehr Snacks zu bekommen?",
+    text: "Wie läuft deine Mission mehr Snacks zu bekommen?",
     image: "images/Plaene.jpg"
   },
   {
@@ -105,7 +105,7 @@ const scenes = [
     image: "images/tuff.jpg"
   },
   {
-    text: "Hast du es schon geschafft, den roten Punkt auf dem Boden zu fangen?",
+    text: "Hast du es schon geschafft den roten Punkt auf dem Boden zu fangen?",
     image: "images/punkt.jpg"
   },
   {
@@ -113,11 +113,11 @@ const scenes = [
     image: "images/schlecht.jpg"
   },
   {
-    text: "Ich glaube langsam, Jessy hat etwas damit zu tun. Aber mir fehlen noch Beweise.",
+    text: "Ich glaube langsam Jessy hat etwas damit zu tun. Aber mir fehlen noch Beweise.",
     image: "images/jessy.jpg"
   },
   {
-    text: "Wenn ich den Punkt kriege, gibt’s was auf die Mütze",
+    text: "Wenn ich den Punkt kriege gibt’s was auf die Mütze",
     image: "images/muetze.jpg"
   },
   {
