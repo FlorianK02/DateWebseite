@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo 2', sans-serif;
+    background: url("images/HazbinHotelWall.jpg") center center / cover no-repeat;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #001f3f; /* Fallback color if image fails */
+  }
+  
+  .container {
+    background-color: rgba(0, 0, 80, 0.6); /* etwas heller/blauer */
+    padding: 40px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 900px; /* mehr Platz für Bilder & Text */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  #story-image {
+    width: 80%; /* Erhöhe die Breite auf 80% des Containers */
+    max-width: 600px; /* Erhöhe die maximale Breite auf 600px */
+    height: auto;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  
+  p#story-text {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  
+  button {
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 1.3rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: #009acd;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
