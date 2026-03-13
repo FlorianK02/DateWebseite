@@ -236,7 +236,7 @@ document.getElementById("yes-btn").addEventListener("click", () => {
     dateChoices.classList.remove("hidden");
 
     typeText("Was sollen wir zum Date machen?");
-  }, 1200);
+  }, 5000);
 });
 
 // --- HIER kommen die Eventlistener für die Date-Vorschläge ---
